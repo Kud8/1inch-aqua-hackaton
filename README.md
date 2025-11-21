@@ -1,5 +1,40 @@
 # Aqua Dashboard & Analytics Platform — Product Overview
 
+## TL;DR
+
+## The Problem
+- Makers lack tools to track performance and optimize portfolios
+- Takers can't easily discover and compare Aqua liquidity
+- No visibility into capital efficiency (SLAC) and strategy performance
+
+## Our Solution
+**Dashboard + Telegram Bot** for Aqua ecosystem:
+
+### For Makers (LPs):
+- Portfolio overview: virtual liquidity, APY, fees earned
+- Strategy performance comparison
+- Security monitoring: virtual vs real balance alerts
+- Performance graphs (from subscription start)
+
+### For Takers:
+- Liquidity discovery by token pair
+- Price comparison with other DEXes
+- Liquidity depth visualization
+
+### Telegram Bot:
+- Daily performance reports (1–2x/day)
+- Real-time alerts (low liquidity, APY drops, opportunities)
+- Crypto payment subscriptions
+
+## Key Features
+1. Subscription-based monitoring: track data from signup, build historical charts
+2. SLAC metrics: show capital efficiency amplification
+3. Auto-compounding visualization: track reinvested profits
+4. Security alerts: prevent illiquidity risks
+
+**Result**: Tools that make Aqua more accessible and help the ecosystem grow.
+
+
 ## 1. Maker Dashboard (LP Portfolio Management)
 
 ### 1.1 Portfolio Overview
