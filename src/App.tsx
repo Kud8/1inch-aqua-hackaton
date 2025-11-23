@@ -44,7 +44,7 @@ const NAV_SECTIONS: NavigationSection[] = [
 
 const App = () => (
     <>
-        <GlobalHeader title={makerDashboardMeta.title} subtitle={makerDashboardMeta.subtitle} sections={NAV_SECTIONS} />
+        <GlobalHeader title={makerDashboardMeta.title} sections={NAV_SECTIONS} />
 
         <AppShell>
             <Content>

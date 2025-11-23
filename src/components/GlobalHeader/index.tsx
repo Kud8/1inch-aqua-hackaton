@@ -9,13 +9,12 @@ export interface NavigationSection {
 
 interface GlobalHeaderProps {
   title: string
-  subtitle: string
   sections: NavigationSection[]
 }
 
 const HEADER_OFFSET = 96
 
-const GlobalHeader = ({ title, subtitle, sections }: GlobalHeaderProps) => {
+const GlobalHeader = ({ title, sections }: GlobalHeaderProps) => {
   const [activeSection, setActiveSection] = useState(sections[0]?.id ?? '')
 
   const scrollToSection = useCallback((sectionId: string) => {
@@ -62,7 +61,6 @@ const GlobalHeader = ({ title, subtitle, sections }: GlobalHeaderProps) => {
     <HeaderBar>
       <Brand>
         <BrandTitle>{title}</BrandTitle>
-        <BrandSubtitle>{subtitle}</BrandSubtitle>
       </Brand>
 
       <Nav>
