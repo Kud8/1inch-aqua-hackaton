@@ -2,7 +2,6 @@ import type { SecurityMonitoringData } from '../../data/makerDashboard'
 import { formatPercent } from '../../utils/format'
 import {
   Wrapper,
-  StatusBadge,
   StatusDescription,
   MetricGrid,
   MetricCard,
@@ -28,7 +27,6 @@ const SecurityMonitoring = ({ data }: SecurityMonitoringProps) => {
 
   return (
     <Wrapper>
-      <StatusBadge status={data.status}>{data.statusLabel}</StatusBadge>
       <StatusDescription>{data.statusDescription}</StatusDescription>
 
       <MetricGrid>
