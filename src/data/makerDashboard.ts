@@ -44,9 +44,64 @@ export interface StrategyPerformanceRow {
   network: string
 }
 
+export type PerformanceGraphUnit = 'currency' | 'percent'
+
+export interface PerformanceGraphMetric {
+  id: string
+  title: string
+  total: number
+  unit: PerformanceGraphUnit
+  change: number
+  periodLabel: string
+  comparisonLabel: string
+  footnote: string
+  points: number[]
+}
+
+export interface StrategyEfficiencyRow {
+  id: string
+  strategy: string
+  feeTier: string
+  apy: number
+  volume30d: number
+  volumeChange: number
+  score: number
+}
+
+export interface StrategyEfficiencyData {
+  pair: string
+  rows: StrategyEfficiencyRow[]
+  insight: string
+}
+
+export type SecurityStatus = 'healthy' | 'warning' | 'critical'
+
+export interface SecurityMonitoringData {
+  status: SecurityStatus
+  statusLabel: string
+  statusDescription: string
+  virtualBalanceRatio: number
+  optimalThreshold: number
+  allowanceCoverage: number
+  allowanceTarget: number
+  walletCoverage: number
+  alerts: string[]
+  recommendations: string[]
+}
+
+export interface AutoCompoundingData {
+  periodLabel: string
+  initialBalance: number
+  currentBalance: number
+  reinvestedProfit: number
+  compoundRate: number
+  growthPoints: number[]
+  notes: string[]
+}
+
 export const makerDashboardMeta: MakerDashboardMeta = {
-  title: 'Maker Intelligence Command Center',
-  subtitle: 'Monitor Aqua strategies, surface capital efficiency signals, and act before the market does.',
+  title: 'Maker Dashboard',
+  subtitle: 'Monitor 1Inch Aqua strategies, surface capital efficiency signals, and act before the market does.',
   highlights: [
     { label: 'Networks', value: 'Ethereum · Arbitrum' },
     { label: 'Strategies', value: '8 active' },
@@ -149,4 +204,111 @@ export const strategyPerformanceRows: StrategyPerformanceRow[] = [
     network: 'Optimism',
   },
 ]
+
+export const performanceGraphsData: PerformanceGraphMetric[] = [
+  {
+    id: 'fees',
+    title: 'Fees earned over time',
+    total: 1_250,
+    unit: 'currency',
+    change: 0.18,
+    periodLabel: 'Last 7 days',
+    comparisonLabel: 'vs prior week',
+    footnote: 'Premium makers get hourly resolution with Telegram alerts.',
+    points: [420, 560, 610, 700, 820, 930, 1_050],
+  },
+  {
+    id: 'virtual-balance',
+    title: 'Virtual balance growth',
+    total: 125_000,
+    unit: 'currency',
+    change: 0.12,
+    periodLabel: 'Since subscription start',
+    comparisonLabel: 'vs previous month',
+    footnote: 'Auto-compounding boosts range capital without extra deposits.',
+    points: [78_000, 82_500, 91_000, 98_400, 105_100, 117_800, 125_000],
+  },
+  {
+    id: 'trade-volume',
+    title: 'Trade volume trends',
+    total: 2_500_000,
+    unit: 'currency',
+    change: 0.27,
+    periodLabel: '30-day rolling',
+    comparisonLabel: 'vs 30d avg',
+    footnote: 'Volume × fee tier determines effective maker revenue.',
+    points: [1_450_000, 1_620_000, 1_880_000, 2_010_000, 2_250_000, 2_420_000, 2_500_000],
+  },
+  {
+    id: 'apy',
+    title: 'APY evolution',
+    total: 18.5,
+    unit: 'percent',
+    change: -0.03,
+    periodLabel: 'Trailing 14 days',
+    comparisonLabel: 'vs long-term average',
+    footnote: 'Stability shows balanced exposure between stable and volatile pairs.',
+    points: [21.5, 20.8, 19.4, 17.6, 18.3, 18.7, 18.5],
+  },
+]
+
+export const strategyEfficiencyData: StrategyEfficiencyData = {
+  pair: 'USDC / DAI (15 bps)',
+  insight: 'Strategy A sustains the best balance between APY and depth; Strategy B can unlock more volume if fees drop.',
+  rows: [
+    {
+      id: 'eff-1',
+      strategy: 'Deep Range A',
+      feeTier: '15 bps',
+      apy: 18.5,
+      volume30d: 2_500_000,
+      volumeChange: 0.22,
+      score: 5,
+    },
+    {
+      id: 'eff-2',
+      strategy: 'Elastic B',
+      feeTier: '30 bps',
+      apy: 12.3,
+      volume30d: 1_150_000,
+      volumeChange: -0.08,
+      score: 3,
+    },
+    {
+      id: 'eff-3',
+      strategy: 'Tight Range C',
+      feeTier: '60 bps',
+      apy: 5.2,
+      volume30d: 420_000,
+      volumeChange: -0.18,
+      score: 1,
+    },
+  ],
+}
+
+export const securityMonitoringData: SecurityMonitoringData = {
+  status: 'healthy',
+  statusLabel: '✅ Healthy posture',
+  statusDescription: 'Virtual balances remain within safe band; allowances cover upcoming settlement cycles.',
+  virtualBalanceRatio: 0.76,
+  optimalThreshold: 0.9,
+  allowanceCoverage: 1.15,
+  allowanceTarget: 1,
+  walletCoverage: 0.62,
+  alerts: ['Strategy #3: Low liquidity - recommend partial dock', 'Token USDC: Allowance refresh scheduled in 3 days'],
+  recommendations: ['Keep SLAC below 0.9 to avoid auto-alerts', 'Approve +$10k allowance on Strategy #2 wallet'],
+}
+
+export const autoCompoundingData: AutoCompoundingData = {
+  periodLabel: 'Since activation (90 days)',
+  initialBalance: 100_000,
+  currentBalance: 125_000,
+  reinvestedProfit: 25_000,
+  compoundRate: 0.25,
+  growthPoints: [0, 6, 11, 14, 18, 22, 25],
+  notes: [
+    'All fees auto-redeployed into the virtual range.',
+    'Compounding cadence synced with settlement windows (24h).',
+  ],
+}
 

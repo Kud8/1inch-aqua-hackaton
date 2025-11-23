@@ -2,7 +2,6 @@ import {
     AppShell,
     Content,
     Hero,
-    HeroTag,
     HeroTitle,
     HeroSubtitle,
     HeroHighlights,
@@ -17,20 +16,27 @@ import {
     FullWidthSection,
 } from './App.styles'
 import {
+    autoCompoundingData,
     capitalEfficiencyData,
     makerDashboardMeta,
+    performanceGraphsData,
     portfolioOverviewData,
+    securityMonitoringData,
+    strategyEfficiencyData,
     strategyPerformanceRows,
 } from './data/makerDashboard'
 import CapitalEfficiencyMetrics from './components/CapitalEfficiencyMetrics'
 import PortfolioOverview from './components/PortfolioOverview'
 import StrategyPerformanceTable from './components/StrategyPerformanceTable'
+import PerformanceGraphs from './components/PerformanceGraphs'
+import StrategyEfficiencyAnalysis from './components/StrategyEfficiencyAnalysis'
+import SecurityMonitoring from './components/SecurityMonitoring'
+import AutoCompounding from './components/AutoCompounding'
 
 const App = () => (
     <AppShell>
         <Content>
             <Hero>
-                <HeroTag>Maker dashboard</HeroTag>
                 <HeroTitle>{makerDashboardMeta.title}</HeroTitle>
                 <HeroSubtitle>{makerDashboardMeta.subtitle}</HeroSubtitle>
                 <HeroHighlights>
@@ -73,6 +79,42 @@ const App = () => (
                     </SectionDescription>
                 </SectionHeading>
                 <StrategyPerformanceTable rows={strategyPerformanceRows} />
+            </FullWidthSection>
+
+            <FullWidthSection>
+                <SectionHeading>
+                    <SectionTitle>Performance Graphs</SectionTitle>
+                    <SectionDescription>
+                        Historical context for fees, capital growth, trade activity, and APY evolution.
+                    </SectionDescription>
+                </SectionHeading>
+                <PerformanceGraphs metrics={performanceGraphsData} />
+            </FullWidthSection>
+
+            <SectionGrid>
+                <SectionCard>
+                    <SectionHeading>
+                        <SectionTitle>Strategy Efficiency</SectionTitle>
+                        <SectionDescription>Same pair comparison to capture the optimal fee × volume mix.</SectionDescription>
+                    </SectionHeading>
+                    <StrategyEfficiencyAnalysis data={strategyEfficiencyData} />
+                </SectionCard>
+
+                <SectionCard>
+                    <SectionHeading>
+                        <SectionTitle>Security Monitoring</SectionTitle>
+                        <SectionDescription>Balance ratios, allowance coverage, and proactive Maker alerts.</SectionDescription>
+                    </SectionHeading>
+                    <SecurityMonitoring data={securityMonitoringData} />
+                </SectionCard>
+            </SectionGrid>
+
+            <FullWidthSection>
+                <SectionHeading>
+                    <SectionTitle>Auto-Compounding Yield</SectionTitle>
+                    <SectionDescription>Track compounded profits since activation and upcoming reinvestments.</SectionDescription>
+                </SectionHeading>
+                <AutoCompounding data={autoCompoundingData} />
             </FullWidthSection>
         </Content>
     </AppShell>

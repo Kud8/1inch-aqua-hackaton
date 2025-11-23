@@ -17,31 +17,9 @@ export const Content = styled.div`
 `
 
 export const Hero = styled.header`
-  background: ${({ theme }) => theme.gradients.card};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.xl};
-  padding: 2.5rem;
-  box-shadow: ${({ theme }) => theme.shadows.soft};
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-
-  @media (max-width: 640px) {
-    padding: 1.5rem;
-  }
-`
-
-export const HeroTag = styled.span`
-  align-self: flex-start;
-  padding: 0.35rem 0.9rem;
-  border-radius: ${({ theme }) => theme.radii.sm};
-  background: rgba(74, 227, 240, 0.12);
-  border: 1px solid rgba(74, 227, 240, 0.35);
-  color: ${({ theme }) => theme.colors.accentPrimary};
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 600;
 `
 
 export const HeroTitle = styled.h1`
