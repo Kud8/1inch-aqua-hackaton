@@ -5,7 +5,7 @@ export const AppShell = styled.main`
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 2.5rem clamp(1rem, 4vw, 4rem) 4rem;
+  padding: 6.5rem clamp(1rem, 4vw, 4rem) 4rem;
 `
 
 export const Content = styled.div`
@@ -31,7 +31,7 @@ export const HeroTitle = styled.h1`
 
 export const HeroSubtitle = styled.p`
   margin: 0;
-  max-width: 720px;
+  font-weight: bold;
   color: ${({ theme }) => theme.colors.textMuted};
   font-size: 1rem;
 `
@@ -62,16 +62,20 @@ export const HighlightValue = styled.span`
   font-weight: 600;
 `
 
+const sectionScrollMargin = '120px'
+
 export const SectionGrid = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  scroll-margin-top: ${sectionScrollMargin};
 `
 
 export const SectionCard = styled.article`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  scroll-margin-top: ${sectionScrollMargin};
 `
 
 export const SectionHeading = styled.div`
@@ -96,5 +100,6 @@ export const FullWidthSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  scroll-margin-top: ${sectionScrollMargin};
 `
 
