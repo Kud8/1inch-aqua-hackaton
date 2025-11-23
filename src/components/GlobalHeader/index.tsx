@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-import { HeaderBar, Brand, BrandTitle, BrandSubtitle, Nav, NavButton } from './styles'
+import { HeaderBar, Brand, BrandTitle, Nav, NavButton } from './styles'
 
 export interface NavigationSection {
   id: string

@@ -56,6 +56,7 @@ export interface PerformanceGraphMetric {
   comparisonLabel: string
   footnote: string
   points: number[]
+  labels?: string[]
 }
 
 export interface StrategyEfficiencyRow {
@@ -192,7 +193,7 @@ export const strategyPerformanceRows: StrategyPerformanceRow[] = [
   {
     id: 'strategy-5',
     name: 'L2 Velocity',
-    pair: 'OP / ETH',
+    pair: 'ARB / ETH',
     feeTier: '100 bps',
     virtualBalance: 8_000,
     fees7d: 64,
@@ -201,7 +202,7 @@ export const strategyPerformanceRows: StrategyPerformanceRow[] = [
     status: 'attention',
     statusLabel: '⚠️ Monitor',
     trend: 'up',
-    network: 'Optimism',
+    network: 'Arbitrum',
   },
 ]
 
@@ -216,6 +217,7 @@ export const performanceGraphsData: PerformanceGraphMetric[] = [
     comparisonLabel: 'vs prior week',
     footnote: 'Premium makers get hourly resolution with Telegram alerts.',
     points: [420, 560, 610, 700, 820, 930, 1_050],
+    labels: ['Nov 17', 'Nov 18', 'Nov 19', 'Nov 20', 'Nov 21', 'Nov 22', 'Nov 23'],
   },
   {
     id: 'virtual-balance',
@@ -227,6 +229,7 @@ export const performanceGraphsData: PerformanceGraphMetric[] = [
     comparisonLabel: 'vs previous month',
     footnote: 'Auto-compounding boosts range capital without extra deposits.',
     points: [78_000, 82_500, 91_000, 98_400, 105_100, 117_800, 125_000],
+    labels: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
   },
   {
     id: 'trade-volume',
@@ -238,6 +241,7 @@ export const performanceGraphsData: PerformanceGraphMetric[] = [
     comparisonLabel: 'vs 30d avg',
     footnote: 'Volume × fee tier determines effective maker revenue.',
     points: [1_450_000, 1_620_000, 1_880_000, 2_010_000, 2_250_000, 2_420_000, 2_500_000],
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7'],
   },
   {
     id: 'apy',
@@ -249,6 +253,7 @@ export const performanceGraphsData: PerformanceGraphMetric[] = [
     comparisonLabel: 'vs long-term average',
     footnote: 'Stability shows balanced exposure between stable and volatile pairs.',
     points: [21.5, 20.8, 19.4, 17.6, 18.3, 18.7, 18.5],
+    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
   },
 ]
 

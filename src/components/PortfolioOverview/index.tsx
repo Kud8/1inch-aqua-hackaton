@@ -12,7 +12,6 @@ import {
   ChangeRow,
   ChangePill,
   ComparisonLabel,
-  Sparkline,
   MetricFootnote,
 } from './styles'
 
@@ -60,7 +59,7 @@ const PortfolioOverview = ({ data }: PortfolioOverviewProps) => {
       </Header>
 
       <MetricGrid>
-        {metrics.map((metric, index) => (
+        {metrics.map((metric) => (
           <MetricCard key={metric.key}>
             <MetricLabel>{metric.label}</MetricLabel>
             <MetricValue>{metric.value}</MetricValue>
@@ -71,7 +70,6 @@ const PortfolioOverview = ({ data }: PortfolioOverviewProps) => {
               </ChangePill>
               <ComparisonLabel>vs previous {data.trailingWindowLabel.toLowerCase()}</ComparisonLabel>
             </ChangeRow>
-            <Sparkline $index={index} aria-hidden />
             <MetricFootnote>{metric.hint}</MetricFootnote>
           </MetricCard>
         ))}

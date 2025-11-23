@@ -4,6 +4,7 @@ import {
   Wrapper,
   CoefficientBlock,
   CoefficientLabel,
+  CoefficientValueRow,
   CoefficientValue,
   StatusChip,
   Divider,
@@ -38,10 +39,12 @@ const CapitalEfficiencyMetrics = ({ data }: CapitalEfficiencyMetricsProps) => {
     <Wrapper>
       <CoefficientBlock>
         <CoefficientLabel>SLAC Coefficient</CoefficientLabel>
-        <CoefficientValue>{data.slacCoefficient.toFixed(1)}x</CoefficientValue>
-        <StatusChip variant={ratioIsHealthy ? 'success' : 'warning'}>
-          {ratioIsHealthy ? 'Healthy leverage' : 'Reduce commitments'}
-        </StatusChip>
+        <CoefficientValueRow>
+          <CoefficientValue>{data.slacCoefficient.toFixed(1)}x</CoefficientValue>
+          <StatusChip variant={ratioIsHealthy ? 'success' : 'warning'}>
+            {ratioIsHealthy ? 'Healthy leverage' : 'Reduce commitments'}
+          </StatusChip>
+        </CoefficientValueRow>
       </CoefficientBlock>
 
       <Divider />
@@ -56,11 +59,6 @@ const CapitalEfficiencyMetrics = ({ data }: CapitalEfficiencyMetricsProps) => {
           <BreakdownLabel>Virtual Commitments</BreakdownLabel>
           <BreakdownValue>{formatCurrency(data.virtualCommitments)}</BreakdownValue>
           <BreakdownHint>Available to takers</BreakdownHint>
-        </BreakdownItem>
-        <BreakdownItem>
-          <BreakdownLabel>Virtual / Real ratio</BreakdownLabel>
-          <BreakdownValue>{virtualRealRatio.toFixed(2)}x</BreakdownValue>
-          <BreakdownHint>Alert at {formatPercent(data.optimalRatioCeiling * 100)}</BreakdownHint>
         </BreakdownItem>
         <BreakdownItem>
           <BreakdownLabel>Active trade coverage</BreakdownLabel>

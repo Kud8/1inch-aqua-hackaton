@@ -44,7 +44,7 @@ export const MetricCard = styled.div`
   background: ${({ theme }) => theme.colors.cardElevated};
   border-radius: ${({ theme }) => theme.radii.md};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 1.1rem 1.25rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;

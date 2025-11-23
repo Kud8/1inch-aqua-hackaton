@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.soft};
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.15rem;
 `
 
 export const CoefficientBlock = styled.div`
@@ -22,10 +22,18 @@ export const CoefficientLabel = styled.span`
   color: ${({ theme }) => theme.colors.textMuted};
 `
 
+export const CoefficientValueRow = styled.div`
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+  flex-wrap: wrap;
+`
+
 export const CoefficientValue = styled.span`
   font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: -0.02em;
+  line-height: 1;
 `
 
 export const StatusChip = styled.span<{ variant: 'success' | 'warning' }>`
