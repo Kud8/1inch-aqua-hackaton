@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.soft};
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 `
 
 export const CoefficientBlock = styled.div`

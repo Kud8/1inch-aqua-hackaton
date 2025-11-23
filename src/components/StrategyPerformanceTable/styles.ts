@@ -6,13 +6,48 @@ export const Wrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.border};
   box-shadow: ${({ theme }) => theme.shadows.soft};
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`
+
+export const ScrollHint = styled.span`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`
+
+export const TableScrollArea = styled.div`
+  margin: 0 -0.5rem;
+  padding: 0 0.5rem 0.4rem;
   overflow-x: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+  }
 `
 
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px;
+  min-width: 760px;
 
   thead {
     text-transform: uppercase;

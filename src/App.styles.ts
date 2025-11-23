@@ -6,6 +6,10 @@ export const AppShell = styled.main`
   display: flex;
   justify-content: center;
   padding: 6.5rem clamp(1rem, 4vw, 4rem) 4rem;
+
+  @media (max-width: 640px) {
+    padding: 5.5rem 0.75rem 3rem;
+  }
 `
 
 export const Content = styled.div`

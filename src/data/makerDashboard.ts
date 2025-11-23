@@ -103,7 +103,7 @@ export const makerDashboardMeta: MakerDashboardMeta = {
   title: 'Maker Dashboard',
   subtitle: 'Monitor 1Inch Aqua strategies, surface capital efficiency signals, and act before the market does.',
   highlights: [
-    { label: 'Networks', value: 'Ethereum · Arbitrum' },
+    { label: 'Networks', value: 'Ethereum, Arbitrum' },
     { label: 'Strategies', value: '8 active' },
     { label: 'Last sync', value: '2 minutes ago' },
   ],

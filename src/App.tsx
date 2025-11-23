@@ -2,7 +2,6 @@ import {
     AppShell,
     Content,
     Hero,
-    HeroTitle,
     HeroSubtitle,
     HeroHighlights,
     HighlightCard,

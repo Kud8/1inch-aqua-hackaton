@@ -9,10 +9,18 @@ export const HeaderBar = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem clamp(1rem, 4vw, 4rem);
+  gap: 1rem;
+  padding: 0.9rem clamp(1rem, 4vw, 4rem);
   background: rgba(5, 6, 11, 0.92);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
+
+  @media (max-width: 768px) {
+    padding: 0.7rem clamp(0.75rem, 5vw, 2rem);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
 `
 
 export const Brand = styled.div`
@@ -20,6 +28,10 @@ export const Brand = styled.div`
   flex-direction: column;
   gap: 0.2rem;
   min-width: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const BrandTitle = styled.span`
@@ -36,24 +48,48 @@ export const BrandSubtitle = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 `
 
 export const Nav = styled.nav`
   display: flex;
   gap: 0.35rem;
-  flex-wrap: wrap;
   justify-content: flex-end;
+  flex-wrap: wrap;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    margin-bottom: -0.2rem;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+    }
+  }
 `
 
 export const NavButton = styled.button<{ $isActive: boolean }>`
   border: none;
   background: transparent;
   color: ${({ theme }) => theme.colors.textMuted};
-  font-size: 0.85rem;
-  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.75rem;
   border-radius: ${({ theme }) => theme.radii.sm};
   cursor: pointer;
   transition: color 0.2s, background 0.2s;
+  flex: 0 0 auto;
 
   ${({ $isActive, theme }) =>
     $isActive

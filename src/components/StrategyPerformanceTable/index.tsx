@@ -2,6 +2,8 @@ import type { StrategyPerformanceRow } from '../../data/makerDashboard'
 import { formatCurrency, formatPercent } from '../../utils/format'
 import {
   Wrapper,
+  ScrollHint,
+  TableScrollArea,
   StyledTable,
   TableHeaderCell,
   TableRow,
@@ -24,7 +26,9 @@ interface StrategyPerformanceTableProps {
 
 const StrategyPerformanceTable = ({ rows }: StrategyPerformanceTableProps) => (
   <Wrapper>
-    <StyledTable>
+    <ScrollHint>Swipe horizontally to reveal the full table</ScrollHint>
+    <TableScrollArea>
+      <StyledTable>
       <thead>
         <tr>
           <TableHeaderCell align="left">Strategy</TableHeaderCell>
@@ -73,7 +77,8 @@ const StrategyPerformanceTable = ({ rows }: StrategyPerformanceTableProps) => (
           </TableRow>
         ))}
       </tbody>
-    </StyledTable>
+      </StyledTable>
+    </TableScrollArea>
   </Wrapper>
 )
 

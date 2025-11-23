@@ -11,6 +11,34 @@ export const Wrapper = styled.div`
   gap: 1rem;
 `
 
+export const ScrollHint = styled.span`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`
+
+export const TableScrollArea = styled.div`
+  margin: 0 -0.5rem;
+  padding: 0 0.5rem 0.3rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+  }
+`
+
 export const Header = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,6 +66,7 @@ export const Insight = styled.p`
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
+  min-width: 620px;
 
   thead {
     font-size: 0.78rem;
