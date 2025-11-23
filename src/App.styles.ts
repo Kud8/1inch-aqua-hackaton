@@ -26,13 +26,6 @@ export const Hero = styled.header`
   gap: 1.25rem;
 `
 
-export const HeroTitle = styled.h1`
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 2.9rem);
-  font-weight: ${({ theme }) => theme.typography.headingWeight};
-  letter-spacing: -0.02em;
-`
-
 export const HeroSubtitle = styled.p`
   margin: 0;
   font-weight: bold;
